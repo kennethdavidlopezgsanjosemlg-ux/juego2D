@@ -5,30 +5,46 @@ import model.Data;
 import view.GamePanel;
 import view.MainView;
 
+/**
+ * Controlador principal de la aplicación.
+ * Se encarga de instanciar el Modelo (Data), la Vista (MainView/GamePanel)
+ * y de conectar los Listeners para que el sistema funcione como un todo.
+ */
 public class MainController {
+    // Referencias a los componentes principales
     private GamePanel gamePanel;
     private MainView mainView;
     private Data data;
-
     private handListener listener;
 
+    /**
+     * Constructor del controlador.
+     * Realiza el ensamblaje de todos los módulos del juego.
+     */
     public MainController() {
-        // Creación de los datos
+        // 1. Instanciamos el almacenamiento de datos (MODELO)
         data = new Data();
 
-        // Creacion de la ventana principal
+        // 2. Creamos las vistas (VISTA) pasando los datos necesarios
         mainView = new MainView(data);
         gamePanel = new GamePanel(data);
 
-        // Estructura de la ventana
+        // 3. Inicializamos el gestor de teclado (CONTROLADOR DE ENTRADA)
         listener = new handListener();
+        
+        // 4. Conectamos el listener al panel del juego
+        // Esto también inicializa al jugador internamente en GamePanel
         gamePanel.addHandListener(listener);
 
-        mainView.add(gamePanel); // A la ventana le añadimos el JPanel
-        mainView.pack(); // Ajustamos el tamaño de la ventana
+        // 5. Montamos la interfaz gráfica
+        mainView.add(gamePanel); 
+        mainView.pack(); // Ajusta el tamaño de la ventana al tamaño del GamePanel
+        mainView.setLocationRelativeTo(null); // Centra la ventana tras el pack()
         mainView.setVisible(true);
 
     }
+
+    // Getters y Setters para acceso externo (si fuera necesario)
 
     public MainView getMainView() {
         return mainView;
