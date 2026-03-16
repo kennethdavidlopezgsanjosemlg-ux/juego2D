@@ -6,7 +6,7 @@ import view.GamePanel;
 import view.MainView;
 
 /**
- * Controlador principal de la aplicación.
+ * Controlador principal de la aplicación
  * Se encarga de instanciar el Modelo (Data), la Vista (MainView/GamePanel)
  * y de conectar los Listeners para que el sistema funcione como un todo.
  */
@@ -18,8 +18,8 @@ public class MainController {
     private handListener listener;
 
     /**
-     * Constructor del controlador.
-     * Realiza el ensamblaje de todos los módulos del juego.
+     * Constructor del controlador
+     * Realiza el ensamblaje de todos los módulos del juego
      */
     public MainController() {
         // 1. Instanciamos el almacenamiento de datos (MODELO)

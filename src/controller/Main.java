@@ -1,13 +1,13 @@
 package controller;
 
 /**
- * Punto de entrada principal de la aplicación.
- * Sigue el patrón MVC iniciando el controlador que orquesta todo.
+ * Punto de entrada principal de la aplicación
+ * Sigue el patrón MVC iniciando el controlador que orquesta todo
  */
 public class Main {
     /**
-     * Método principal que lanza el programa.
-     * @param args Argumentos de línea de comandos (no utilizados).
+     * Método principal que lanza el programa
+     * @param args Argumentos de línea de comandos (no utilizados)
      */
     public static void main(String[] args) {
         // Creamos el controlador principal

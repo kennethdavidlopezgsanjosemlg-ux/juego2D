@@ -13,8 +13,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Representa al jugador dentro del juego.
- * Gestiona su posición, movimiento basado en teclado y representación visual con animaciones extraídas de plantillas.
+ * Representa al jugador dentro del juego
+ * Gestiona su posición, movimiento basado en teclado y representación visual con animaciones extraídas de plantillas
  */
 public class Player extends Entity {
 
@@ -28,7 +28,7 @@ public class Player extends Entity {
     private final int FRAME_HEIGHT = 128;
 
     /**
-     * Constructor del jugador.
+     * Constructor del jugador
      */
     public Player(GamePanel gp, handListener keyInputListener, Data data, int tileSize) {
         this.gp = gp;
@@ -41,7 +41,7 @@ public class Player extends Entity {
     }
 
     /**
-     * Carga las animaciones del jugador desde las hojas de sprites.
+     * Carga las animaciones del jugador desde las hojas de sprites
      */
     public void getPlayerImage() {
         // Carga de la hoja de sprites para reposo (Idle)
@@ -73,7 +73,7 @@ public class Player extends Entity {
     }
 
     /**
-     * Carga una imagen completa desde el disco.
+     * Carga una imagen completa desde el disco
      */
     private BufferedImage loadFullImage(String path) {
         try {
@@ -90,10 +90,10 @@ public class Player extends Entity {
     }
 
     /**
-     * Divide una fila de la hoja de sprites en frames individuales.
-     * @param sheet La imagen completa de la hoja.
-     * @param row La fila que se desea extraer.
-     * @return Lista de frames.
+     * Divide una fila de la hoja de sprites en frames individuales
+     * @param sheet La imagen completa de la hoja
+     * @param row La fila que se desea extraer
+     * @return Lista de frames
      */
     private ArrayList<BufferedImage> setupAnimation(BufferedImage sheet, int row) {
         ArrayList<BufferedImage> list = new ArrayList<>();
@@ -106,7 +106,7 @@ public class Player extends Entity {
     }
 
     /**
-     * Establece los valores iniciales del jugador.
+     * Establece los valores iniciales del jugador
      */
     public void setDefaultValues() {
         x = data.getDecimal(0); // playerX
@@ -118,7 +118,7 @@ public class Player extends Entity {
     }
 
     /**
-     * Actualiza la lógica del jugador (movimiento y animación).
+     * Actualiza la lógica del jugador (movimiento y animación)
      */
     public void update(double delTime) {
         double speedPerSecond = speed * 10;
@@ -166,7 +166,7 @@ public class Player extends Entity {
     }
 
     /**
-     * Dibuja al jugador en pantalla.
+     * Dibuja al jugador en pantalla
      */
     public void draw(Graphics2D g2) {
         ArrayList<BufferedImage> currentAnim = null;

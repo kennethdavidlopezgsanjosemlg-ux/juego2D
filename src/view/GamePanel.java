@@ -8,8 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Panel principal del juego donde ocurre la renderización y la lógica.
- * Implementa Runnable para ejecutar el "Game Loop" en un hilo separado.
+ * Panel principal del juego donde ocurre la renderización y la lógica
+ * Implementa Runnable para ejecutar el "Game Loop" en un hilo separado
  */
 public class GamePanel extends JPanel implements Runnable {
 
@@ -39,9 +39,9 @@ public class GamePanel extends JPanel implements Runnable {
     Player player;
 
     /**
-     * Constructor del GamePanel.
-     * Carga las configuraciones iniciales desde el almacén de datos (Data).
-     * @param data Objeto Data con las constantes y variables del juego.
+     * Constructor del GamePanel
+     * Carga las configuraciones iniciales desde el almacén de datos (Data)
+     * @param data Objeto Data con las constantes y variables del juego
      */
     public GamePanel(Data data) {
         this.data = data;
@@ -62,9 +62,9 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     /**
-     * Dibuja los componentes gráficos en el panel.
-     * Es invocado automáticamente por el sistema (vía repaint()).
-     * @param g Contexto gráfico básico.
+     * Dibuja los componentes gráficos en el panel
+     * Es invocado automáticamente por el sistema (vía repaint())
+     * @param g Contexto gráfico básico
      */
     public void paintComponent(Graphics g) {
         // Limpiamos el panel antes de redibujar
@@ -94,7 +94,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     /**
      * Actualiza la lógica de las entidades.
-     * @param delTime Tiempo transcurrido para cálculos de movimiento.
+     * @param delTime Tiempo transcurrido para cálculos de movimiento
      */
     public void update(double delTime) {
         if (player != null) {
@@ -103,7 +103,7 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     /**
-     * Inicia el hilo principal del juego si no está ya en ejecución.
+     * Inicia el hilo principal del juego si no está ya en ejecución
      */
     public void startGameThread() {
         gameThread = new Thread(this);
@@ -111,7 +111,7 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     /**
-     * Configuración estética y técnica del JPanel.
+     * Configuración estética y técnica del JPanel
      */
     public void settings() {
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
@@ -126,8 +126,8 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     /**
-     * Vincula el listener de teclado al panel y crea el objeto jugador.
-     * @param keyInputListener El gestor de pulsaciones de teclas.
+     * Vincula el listener de teclado al panel y crea el objeto jugador
+     * @param keyInputListener El gestor de pulsaciones de teclas
      */
     public void addHandListener(handListener keyInputListener) {
         this.keyInputListener = keyInputListener;
@@ -139,7 +139,7 @@ public class GamePanel extends JPanel implements Runnable {
     /**
      * Implementación del Game Loop (Método Delta/Acumulador).
      * Este bucle garantiza que el juego se ejecute a una velocidad constante
-     * independientemente de la potencia de procesamiento del ordenador.
+     * independientemente de la potencia de procesamiento del ordenador
      */
     @Override
     public void run() {

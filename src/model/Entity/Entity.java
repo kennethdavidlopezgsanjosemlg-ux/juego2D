@@ -4,8 +4,8 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 /**
- * Clase base para todos los objetos móviles o estáticos del juego.
- * Contiene propiedades comunes como posición, velocidad y gestión de sprites.
+ * Clase base para todos los objetos móviles o estáticos del juego
+ * Contiene propiedades comunes como posición, velocidad y gestión de sprites
  */
 public class Entity {
     // Posición X en el mundo (utiliza double para suavizar el movimiento)
